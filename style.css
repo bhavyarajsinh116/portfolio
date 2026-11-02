@@ -371,10 +371,11 @@ p {
   max-width: var(--max-width);
   height: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .brand-logo {
@@ -385,6 +386,8 @@ p {
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
+  margin-right: 24px;
 }
 
 .logo-box {
@@ -421,7 +424,13 @@ p {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+/* Hidden by default on desktop; only active in mobile menu drawer */
+.mobile-nav-footer {
+  display: none;
 }
 
 .nav-link {
@@ -430,6 +439,7 @@ p {
   color: var(--text-secondary);
   position: relative;
   padding: 4px 0;
+  white-space: nowrap;
 }
 .nav-link:hover, .nav-link.active {
   color: var(--text-primary);
@@ -449,6 +459,7 @@ p {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 /* Status Pulse Badge */
@@ -530,82 +541,31 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
-  gap: 40px;
-  align-items: flex-start;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
 }
 
-/* Hero Profile Badge Intro */
-.hero-avatar-intro {
+/* Hero Status Pill */
+.hero-status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-medium);
-  padding: 5px 16px 5px 6px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-fast);
-}
-.hero-avatar-intro:hover {
-  border-color: var(--accent-cyan);
-  background: var(--bg-surface-hover);
-  box-shadow: 0 0 16px var(--accent-cyan-glow);
-  transform: translateY(-1px);
-}
-
-.hero-avatar-thumb-wrap {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--accent-cyan);
-  flex-shrink: 0;
-}
-
-.hero-avatar-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  transition: transform var(--transition-fast);
-}
-.hero-avatar-intro:hover .hero-avatar-thumb {
-  transform: scale(1.12);
-}
-
-.hero-thumb-dot {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-emerald);
-  border: 2px solid var(--bg-surface);
-  box-shadow: 0 0 6px var(--accent-emerald);
-}
-
-.hero-avatar-intro-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-intro-name {
-  font-family: var(--font-heading);
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
-}
-
-.hero-intro-status {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 600;
   color: var(--accent-emerald);
-  line-height: 1.2;
+  margin-bottom: 20px;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.12);
+}
+
+.hero-status-pill .status-pulse {
+  width: 7px;
+  height: 7px;
 }
 
 .hero-badge-wrap {
@@ -683,7 +643,7 @@ p {
   position: relative;
   perspective: 1200px;
   width: 100%;
-  max-width: 440px;
+  max-width: 380px;
   margin-left: auto;
 }
 
@@ -788,11 +748,12 @@ p {
   animation: pulse-ring 2s infinite ease-out;
 }
 
-/* Portrait Stage — Perfectly proportioned 3:4 aspect ratio showing full head & suit clothes */
+/* Portrait Stage — Exact 1064:1478 natural photo aspect ratio showing full head & suit clothes */
 .profile-photo-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1064 / 1478;
+  max-height: 465px;
   overflow: hidden;
   background: #0f131c;
 }
@@ -808,8 +769,8 @@ p {
 }
 
 .interactive-profile-card:hover .profile-main-photo {
-  transform: scale(1.04);
-  filter: contrast(105%) brightness(103%);
+  transform: scale(1.03);
+  filter: contrast(104%) brightness(102%);
 }
 
 .photo-overlay-scrim {
@@ -817,8 +778,8 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 22%;
-  background: linear-gradient(to top, rgba(9, 10, 15, 0.45) 0%, transparent 100%);
+  height: 16%;
+  background: linear-gradient(to top, rgba(9, 10, 15, 0.4) 0%, transparent 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -2364,9 +2325,11 @@ p {
     margin: 0 auto;
   }
 
-  /* Hide redundant mini avatar inside hero-content since full portrait is right above */
-  .hero-avatar-intro {
-    display: none;
+  .hero-status-pill {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+    text-align: center;
   }
 
   .hero-badge-wrap {
