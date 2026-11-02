@@ -158,98 +158,55 @@
           </div>
         </div>
 
-        <!-- Interactive Profile Card & Terminal Showcase -->
+        <!-- Interactive 3D Profile Card with Hover React -->
         <div class="hero-interactive">
-          <!-- View Switcher Tabs -->
-          <div class="hero-view-tabs" role="tablist">
-            <button class="view-tab-btn active" id="tab-portrait-btn" data-target="portrait-view" role="tab" aria-selected="true">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Engineer Profile</span>
-            </button>
-            <button class="view-tab-btn" id="tab-terminal-btn" data-target="terminal-view" role="tab" aria-selected="false">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-              <span>Live Terminal Shell</span>
-            </button>
-          </div>
+          <div class="interactive-profile-card" id="profile-card-3d">
+            <div class="card-ambient-glow" aria-hidden="true"></div>
+            <div class="card-glare" id="profile-card-glare" aria-hidden="true"></div>
 
-          <!-- VIEW 1: 3D Interactive Profile Portrait Card with Hover React -->
-          <div class="profile-card-view active" id="portrait-view">
-            <div class="interactive-profile-card" id="profile-card-3d">
-              <div class="card-ambient-glow" aria-hidden="true"></div>
-              <div class="card-glare" id="profile-card-glare" aria-hidden="true"></div>
-
-              <!-- Card Top Header -->
-              <div class="profile-card-header">
-                <div class="pch-left">
-                  <span class="dot-indicator"></span>
-                  <span class="pch-title">bhavyarajsinh.portrait</span>
-                </div>
-                <div class="pch-badge">
-                  <span class="pulse-indicator"></span>
-                  <span>ONLINE & AVAILABLE</span>
-                </div>
+            <!-- Card Top Header -->
+            <div class="profile-card-header">
+              <div class="pch-left">
+                <span class="dot-indicator"></span>
+                <span class="pch-title">bhavyarajsinh.portrait</span>
               </div>
-
-              <!-- Portrait Photo Stage with 3D Depth -->
-              <div class="profile-photo-stage">
-                <img src="./image/profilePicture.jpeg" alt="Bhavyarajsinh - Full-Stack Software Engineer" class="profile-main-photo" id="profile-photo-img" />
-                <div class="photo-overlay-scrim"></div>
-
-                <!-- Floating 3D Depth Tags (react to mouse movement) -->
-                <div class="floating-chip chip-top-right">
-                  <span class="chip-dot">⚡</span>
-                  <span>Full-Stack SDE</span>
-                </div>
-
-                <div class="floating-chip chip-bottom-left">
-                  <span class="chip-dot">🚀</span>
-                  <span>React • Node.js</span>
-                </div>
-
-                <div class="floating-chip chip-bottom-right">
-                  <span class="chip-dot">📍</span>
-                  <span>Open to Relocate</span>
-                </div>
-              </div>
-
-              <!-- Profile Card Footnote -->
-              <div class="profile-card-footnote">
-                <div class="pcf-col">
-                  <span class="pcf-label">Primary Stack</span>
-                  <span class="pcf-val">React • Express • PostgreSQL</span>
-                </div>
-                <div class="pcf-col pcf-right">
-                  <span class="pcf-label">Notice Period</span>
-                  <span class="pcf-val text-emerald">Immediate Joiner</span>
-                </div>
+              <div class="pch-badge">
+                <span class="pulse-indicator"></span>
+                <span>ONLINE & AVAILABLE</span>
               </div>
             </div>
-          </div>
 
-          <!-- VIEW 2: Live Code Terminal -->
-          <div class="terminal-view-wrap" id="terminal-view">
-            <div class="terminal-window">
-              <div class="terminal-bar">
-                <div class="terminal-dots">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
-                </div>
-                <div class="terminal-title">engineer-profile.json — zsh</div>
-                <div class="terminal-pill">LIVE</div>
+            <!-- Portrait Photo Stage with 3D Depth -->
+            <div class="profile-photo-stage">
+              <img src="./image/profilePicture.jpeg" alt="Gohil Bhavyarajsinh - Full-Stack Software Engineer" class="profile-main-photo" id="profile-photo-img" />
+              <div class="photo-overlay-scrim"></div>
+
+              <!-- Floating 3D Depth Tags (react to mouse movement) -->
+              <div class="floating-chip chip-top-right">
+                <span class="chip-dot">⚡</span>
+                <span>Full-Stack SDE</span>
               </div>
-              <div class="terminal-body">
-                <pre><code id="typing-code" class="code-block"></code></pre>
+
+              <div class="floating-chip chip-bottom-left">
+                <span class="chip-dot">🚀</span>
+                <span>React • Node.js</span>
               </div>
-              <div class="terminal-footer">
-                <div class="terminal-status-row">
-                  <span class="tech-chip">React 18</span>
-                  <span class="tech-chip">Node.js</span>
-                  <span class="tech-chip">Express</span>
-                  <span class="tech-chip">PostgreSQL</span>
-                  <span class="tech-chip">MongoDB</span>
-                  <span class="tech-chip">Redis</span>
-                </div>
+
+              <div class="floating-chip chip-bottom-right">
+                <span class="chip-dot">📍</span>
+                <span>Parul University</span>
+              </div>
+            </div>
+
+            <!-- Profile Card Footnote -->
+            <div class="profile-card-footnote">
+              <div class="pcf-col">
+                <span class="pcf-label">Primary Stack</span>
+                <span class="pcf-val">React • Express • MongoDB</span>
+              </div>
+              <div class="pcf-col pcf-right">
+                <span class="pcf-label">Notice Period</span>
+                <span class="pcf-val text-emerald">Immediate Joiner</span>
               </div>
             </div>
           </div>

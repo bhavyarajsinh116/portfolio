@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initBackgroundCanvas();
   initProfileCard3D();
-  initHeroTabs();
-  initTerminalTyping();
   initMetricCounters();
   initSkillFilters();
   initArchitectureModals();
@@ -87,34 +85,6 @@ function initProfileCard3D() {
   card.addEventListener('mouseleave', onMouseLeave);
 }
 
-/* --------------------------------------------------------------------------
-   Hero Switcher Tabs (Portrait vs Terminal)
-   -------------------------------------------------------------------------- */
-function initHeroTabs() {
-  const tabBtns = document.querySelectorAll('.view-tab-btn');
-  const portraitView = document.getElementById('portrait-view');
-  const terminalView = document.getElementById('terminal-view');
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      const target = btn.getAttribute('data-target');
-      if (target === 'portrait-view') {
-        if (portraitView) portraitView.classList.add('active');
-        if (terminalView) terminalView.classList.remove('active');
-      } else if (target === 'terminal-view') {
-        if (portraitView) portraitView.classList.remove('active');
-        if (terminalView) terminalView.classList.add('active');
-      }
-    });
-  });
-}
 
 /* --------------------------------------------------------------------------
    2. Background Tech Grid & Particle Canvas
@@ -211,44 +181,6 @@ function initBackgroundCanvas() {
   render();
 }
 
-/* --------------------------------------------------------------------------
-   3. Terminal Typing Effect
-   -------------------------------------------------------------------------- */
-function initTerminalTyping() {
-  const codeEl = document.getElementById('typing-code');
-  if (!codeEl) return;
-
-  const profileLines = [
-    `{`,
-    `  <span class="code-key">"engineer"</span>: <span class="code-str">"Bhavyarajsinh"</span>,`,
-    `  <span class="code-key">"role"</span>: <span class="code-str">"Full-Stack Software Engineer"</span>,`,
-    `  <span class="code-key">"coreStack"</span>: [`,
-    `    <span class="code-str">"React.js"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"Express"</span>,`,
-    `    <span class="code-str">"PostgreSQL"</span>, <span class="code-str">"MongoDB"</span>, <span class="code-str">"Redis"</span>`,
-    `  ],`,
-    `  <span class="code-key">"architecture"</span>: <span class="code-str">"REST APIs, Microservices, Distributed Caching"</span>,`,
-    `  <span class="code-key">"status"</span>: <span class="code-str">"Interview Ready & Available Immediately"</span>,`,
-    `  <span class="code-key">"openToRelocate"</span>: <span class="code-bool">true</span>,`,
-    `  <span class="code-key">"yearsCode"</span>: <span class="code-num">3</span>`,
-    `}`
-  ];
-
-  let currentLine = 0;
-  let formattedHtml = '';
-
-  function typeNextLine() {
-    if (currentLine < profileLines.length) {
-      formattedHtml += profileLines[currentLine] + '\n';
-      codeEl.innerHTML = formattedHtml + '<span class="code-cursor"></span>';
-      currentLine++;
-      setTimeout(typeNextLine, 110);
-    } else {
-      codeEl.innerHTML = formattedHtml;
-    }
-  }
-
-  typeNextLine();
-}
 
 /* --------------------------------------------------------------------------
    4. Animated Metric Counters
