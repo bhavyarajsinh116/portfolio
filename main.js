@@ -6,6 +6,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initBackgroundCanvas();
+  initProfileCard3D();
+  initHeroTabs();
   initTerminalTyping();
   initMetricCounters();
   initSkillFilters();
@@ -36,6 +38,82 @@ function initTheme() {
       showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`);
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   Profile Card 3D Hover Tilt & Specular Glare React
+   -------------------------------------------------------------------------- */
+function initProfileCard3D() {
+  const card = document.getElementById('profile-card-3d');
+  const glare = document.getElementById('profile-card-glare');
+  if (!card) return;
+
+  let bounds;
+
+  function onMouseEnter() {
+    bounds = card.getBoundingClientRect();
+  }
+
+  function onMouseMove(e) {
+    if (!bounds) bounds = card.getBoundingClientRect();
+    const mouseX = e.clientX - bounds.left;
+    const mouseY = e.clientY - bounds.top;
+
+    const xPct = mouseX / bounds.width;
+    const yPct = mouseY / bounds.height;
+
+    // Up to 15deg tilt
+    const tiltX = (0.5 - yPct) * 15;
+    const tiltY = (xPct - 0.5) * 15;
+
+    card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+    if (glare) {
+      card.style.setProperty('--glare-x', `${(xPct * 100).toFixed(1)}%`);
+      card.style.setProperty('--glare-y', `${(yPct * 100).toFixed(1)}%`);
+    }
+  }
+
+  function onMouseLeave() {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease';
+  }
+
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'none';
+    onMouseEnter();
+  });
+  card.addEventListener('mousemove', onMouseMove);
+  card.addEventListener('mouseleave', onMouseLeave);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Switcher Tabs (Portrait vs Terminal)
+   -------------------------------------------------------------------------- */
+function initHeroTabs() {
+  const tabBtns = document.querySelectorAll('.view-tab-btn');
+  const portraitView = document.getElementById('portrait-view');
+  const terminalView = document.getElementById('terminal-view');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const target = btn.getAttribute('data-target');
+      if (target === 'portrait-view') {
+        if (portraitView) portraitView.classList.add('active');
+        if (terminalView) terminalView.classList.remove('active');
+      } else if (target === 'terminal-view') {
+        if (portraitView) portraitView.classList.remove('active');
+        if (terminalView) terminalView.classList.add('active');
+      }
+    });
+  });
 }
 
 /* --------------------------------------------------------------------------
