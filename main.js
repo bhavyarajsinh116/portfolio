@@ -507,9 +507,8 @@ function initResumeModal() {
   }
 
   if (downloadBtn) {
-    downloadBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.print();
+    downloadBtn.addEventListener('click', () => {
+      showToast('Downloading Gohil Bhavyarajsinh Resume (PDF)...');
     });
   }
 }
@@ -592,7 +591,7 @@ function initCommandPalette() {
         const resumeModal = document.getElementById('resume-modal');
         if (resumeModal) resumeModal.classList.add('open');
       } else if (action === 'copy-email') {
-        copyToClipboard('bhavyarajsinh.dev@gmail.com');
+        copyToClipboard('gohilbhavyarajsinhji@gmail.com');
       } else if (action === 'toggle-theme') {
         const toggleBtn = document.getElementById('theme-toggle');
         if (toggleBtn) toggleBtn.click();
@@ -677,7 +676,7 @@ function initCopyButtons() {
 
   if (quickEmailBtn) {
     quickEmailBtn.addEventListener('click', () => {
-      copyToClipboard('bhavyarajsinh.dev@gmail.com');
+      copyToClipboard('gohilbhavyarajsinhji@gmail.com');
       if (copyText) {
         copyText.textContent = 'Copied to Clipboard!';
         setTimeout(() => {
