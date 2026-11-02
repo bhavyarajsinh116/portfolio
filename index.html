@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhavyarajsinh | Full-Stack Software Engineer</title>
+  <meta name="description" content="Portfolio of Bhavyarajsinh - Full-Stack Web Developer specializing in React, Node.js, Express, and Database Systems. Building scalable, high-performance web applications." />
+  <meta name="keywords" content="Bhavyarajsinh, Full-Stack Developer, Software Engineer, React, Node.js, Express, JavaScript, Portfolio" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Ambient background glow & canvas grid -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Bhavyarajsinh Home">
+        <span class="logo-box">B</span>
+        <span class="logo-text">bhavyarajsinh<span class="accent-dot">.dev</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#architecture" class="nav-link">System Design</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Status Indicator -->
+        <div class="status-badge" title="Open to full-time engineering roles">
+          <span class="status-pulse"></span>
+          <span class="status-text">Available for Hire</span>
+        </div>
+
+        <!-- Quick Resume Modal Button -->
+        <button id="open-resume-btn" class="btn btn-outline btn-sm" aria-label="Open Resume Preview">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>CV / Resume</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Command Palette Trigger -->
+        <button id="cmd-k-trigger" class="cmd-k-btn" aria-label="Search and command palette" title="Quick navigation (Ctrl + K)">
+          <span class="cmd-icon">⌘</span>
+          <span class="cmd-key">K</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="mobile-toggle icon-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="tag tag-accent">
+              <span class="indicator-dot"></span>
+              Full-Stack Software Engineer
+            </span>
+            <span class="tag tag-subtle">MERN • System Architecture • REST APIs</span>
+          </div>
+
+          <h1 class="hero-title">
+            Architecting <span class="gradient-text">high-impact</span> web products that scale effortlessly.
+          </h1>
+
+          <p class="hero-lead">
+            Hi, I'm <strong class="text-white">Bhavyarajsinh</strong>. I engineer production-grade full-stack web applications with React, Node.js, Express, and distributed databases. Focused on clean architecture, sub-second latency, and intuitive developer & user experience.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary" id="hero-explore-projects">
+              <span>Explore Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              <span>Let's Connect</span>
+            </a>
+
+            <button id="quick-copy-email" class="btn btn-ghost" title="Copy email address to clipboard">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span id="copy-email-text">Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-val" data-target="15">0</span><span class="metric-suffix">+</span>
+              <span class="metric-label">Engineered Projects</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-val" data-target="99">0</span><span class="metric-suffix">.9%</span>
+              <span class="metric-label">Clean Code & Reliability</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-val" data-target="100">0</span><span class="metric-suffix">ms</span>
+              <span class="metric-label">Target API Response</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-val" data-target="100">0</span><span class="metric-suffix">%</span>
+              <span class="metric-label">Production Ownership</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal / Code Profile Visualizer -->
+        <div class="hero-interactive">
+          <div class="terminal-window">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title">engineer-profile.json — zsh</div>
+              <div class="terminal-pill">LIVE</div>
+            </div>
+            <div class="terminal-body">
+              <pre><code id="typing-code" class="code-block"></code></pre>
+            </div>
+            <div class="terminal-footer">
+              <div class="terminal-status-row">
+                <span class="tech-chip">React 18</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">Express</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">MongoDB</span>
+                <span class="tech-chip">Redis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & VALUE PROPOSITION FOR INTERVIEWS -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">ENGINEERING MINDSET</span>
+          <h2 class="section-title">Built for high-velocity, scalable software teams</h2>
+          <p class="section-desc">
+            What makes me an asset in technical interviews and production sprints: pragmatic decision-making, strong CS fundamentals, and a relentless commitment to performance.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="pillar-title">Robust Backend Architecture</h3>
+            <p class="pillar-desc">
+              Designing scalable RESTful APIs, modular Express services, middleware pipelines, secure JWT/OAuth authentications, and rate-limiting safeguards.
+            </p>
+            <span class="pillar-foot">Layered Architecture • Clean Code</span>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3 class="pillar-title">Modern Reactive Frontends</h3>
+            <p class="pillar-desc">
+              Developing state-driven, componentized user interfaces in React. Proficient in custom hooks, optimistic UI updates, responsive CSS architectures, and Web Vitals.
+            </p>
+            <span class="pillar-foot">60fps Smooth UI • Micro-interactions</span>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="pillar-title">Data Modeling & Performance</h3>
+            <p class="pillar-desc">
+              Proficient in relational schemas (PostgreSQL / MySQL) and document stores (MongoDB). Experience with database indexing, aggregations, query profiling, and Redis caching.
+            </p>
+            <span class="pillar-foot">ACID Transactions • Query Optimization</span>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            </div>
+            <h3 class="pillar-title">DevOps & Team Velocity</h3>
+            <p class="pillar-desc">
+              Containerization with Docker, Git branch workflows, continuous integration pipelines, automated tests, and clear technical documentation for agile collaboration.
+            </p>
+            <span class="pillar-foot">Docker • CI/CD • Agile Delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION (FILTERABLE & ACCREDITED) -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CORE COMPETENCIES</span>
+          <h2 class="section-title">Technical Expertise & Tooling</h2>
+          <p class="section-desc">
+            A comprehensive overview of my technical stack across frontend, backend, data, and devops tooling.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter-tabs" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Technologies</button>
+          <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend & UI</button>
+          <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend & APIs</button>
+          <button class="filter-btn" data-filter="database" role="tab" aria-selected="false">Database & Cache</button>
+          <button class="filter-btn" data-filter="tools" role="tab" aria-selected="false">DevOps & Workflow</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Item: React -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap react-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">React.js</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Hooks, Context API, Redux Toolkit, Virtual DOM optimization, custom UI libraries.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%"></div></div>
+          </div>
+
+          <!-- Item: Node.js -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap node-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/><polyline points="12 22 12 12 21 7"/><polyline points="12 12 3 7"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Node.js</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Event loop mastery, asynchronous I/O, streams, clustering, and microservice architecture.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%"></div></div>
+          </div>
+
+          <!-- Item: Express.js -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap express-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Express.js</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">RESTful routing, custom middleware pipelines, authentication, error handling schemas.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%"></div></div>
+          </div>
+
+          <!-- Item: JavaScript (ES6+) -->
+          <div class="skill-card" data-category="frontend backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap js-icon">
+                <span class="mono-badge">JS</span>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">JavaScript (ES6+)</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Closures, Prototypes, Promises/Async-Await, Generators, Web APIs, functional patterns.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%"></div></div>
+          </div>
+
+          <!-- Item: TypeScript -->
+          <div class="skill-card" data-category="frontend backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap ts-icon">
+                <span class="mono-badge">TS</span>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">TypeScript</h4>
+                <span class="skill-type">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Strict type safety, interfaces, generics, utility types, and full-stack type sharing.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 85%"></div></div>
+          </div>
+
+          <!-- Item: PostgreSQL -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap pg-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">PostgreSQL</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Relational schema design, indexes (B-tree, GIN), joins, foreign keys, transactions.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%"></div></div>
+          </div>
+
+          <!-- Item: MongoDB -->
+          <div class="skill-card" data-category="database">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap mongo-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C9 7 4 11 4 16a8 8 0 0 0 16 0c0-5-5-9-8-14z"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">MongoDB & Mongoose</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Document schemas, aggregation pipelines, replica sets, compound indexing.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%"></div></div>
+          </div>
+
+          <!-- Item: Redis -->
+          <div class="skill-card" data-category="database backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap redis-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"/><polygon points="12 15 2 21.5 12 22 22 21.5 12 15"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Redis In-Memory Cache</h4>
+                <span class="skill-type">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Session store, pub/sub queues, caching layers, token blacklisting & rate-limiting.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 82%"></div></div>
+          </div>
+
+          <!-- Item: Modern CSS & Design -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap css-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Modern CSS & Responsive</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">CSS Grid, Flexbox, custom CSS variables, micro-animations, glassmorphism, accessibility.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%"></div></div>
+          </div>
+
+          <!-- Item: Docker & Containers -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap docker-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Docker & Containers</h4>
+                <span class="skill-type">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Dockerfile multi-stage builds, docker-compose multi-service orchestrations, env parity.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 80%"></div></div>
+          </div>
+
+          <!-- Item: Git & CI/CD -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap git-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/><polyline points="6 15 6 9 12 9"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">Git & GitHub Actions</h4>
+                <span class="skill-type">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Branching strategies, code reviews, PR workflows, automated testing & deployment scripts.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%"></div></div>
+          </div>
+
+          <!-- Item: WebSockets & Real-Time -->
+          <div class="skill-card" data-category="backend frontend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap ws-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </div>
+              <div class="skill-meta">
+                <h4 class="skill-name">WebSockets (Socket.io)</h4>
+                <span class="skill-type">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Bi-directional event streaming, real-time messaging, presence states, room broadcasting.</p>
+            <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 86%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION (INTERVIEW MAGNET) -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">ENGINEERING SHOWCASE</span>
+          <h2 class="section-title">Production-Grade Applications</h2>
+          <p class="section-desc">
+            Deep-dive into full-stack systems I've architected from scratch. Built with clean separation of concerns, defensive programming, and scalability in mind.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <!-- Project 1: CloudPulse -->
+          <article class="project-card" data-project="cloudpulse">
+            <div class="project-header">
+              <div class="project-meta-top">
+                <span class="project-badge">Flagship Project</span>
+                <span class="project-category">DevOps & Observability</span>
+              </div>
+              <h3 class="project-name">CloudPulse — Distributed API Health & Incident Telemetry</h3>
+              <p class="project-tagline">
+                Enterprise-grade real-time monitoring platform that pings distributed endpoints, analyzes heartbeat metrics, and triggers automated incident failover alerts.
+              </p>
+            </div>
+
+            <!-- Visual Preview Canvas -->
+            <div class="project-preview-box">
+              <div class="preview-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  <span class="mockup-url">https://cloudpulse-telemetry.app/dashboard</span>
+                  <span class="mockup-status">200 OK • 42ms</span>
+                </div>
+                <div class="mockup-content">
+                  <div class="mockup-stats-row">
+                    <div class="mini-stat">
+                      <span class="mini-label">Uptime</span>
+                      <span class="mini-val text-emerald">99.98%</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-label">Avg Latency</span>
+                      <span class="mini-val text-cyan">38ms</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-label">Active Monitors</span>
+                      <span class="mini-val">48 Nodes</span>
+                    </div>
+                    <div class="mini-stat">
+                      <span class="mini-label">Failover State</span>
+                      <span class="mini-val text-emerald">HEALTHY</span>
+                    </div>
+                  </div>
+                  <!-- Simulated Live Latency Chart -->
+                  <div class="mockup-chart-placeholder">
+                    <div class="chart-bar" style="height: 60%"></div>
+                    <div class="chart-bar" style="height: 45%"></div>
+                    <div class="chart-bar" style="height: 80%"></div>
+                    <div class="chart-bar" style="height: 50%"></div>
+                    <div class="chart-bar" style="height: 35%"></div>
+                    <div class="chart-bar" style="height: 70%"></div>
+                    <div class="chart-bar" style="height: 90%"></div>
+                    <div class="chart-bar" style="height: 40%"></div>
+                    <div class="chart-bar active" style="height: 38%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details-grid">
+              <div class="project-detail-col">
+                <span class="detail-label">The Technical Challenge</span>
+                <p class="detail-text">
+                  Handling concurrent health polling across hundreds of external microservice endpoints every 10 seconds without overwhelming server thread memory or skewing time-series latency readings.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Architecture & Solution</span>
+                <p class="detail-text">
+                  Implemented an asynchronous event-driven worker queue with BullMQ and Redis. Express service dispatches scheduled jobs, while WebSockets pipe sub-50ms live chart telemetry to React clients.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Key Outcome & Metrics</span>
+                <p class="detail-text">
+                  Achieved 99.98% telemetry accuracy, 60% lower memory footprint than synchronous cron models, and sub-second automated alert dispatch via webhooks.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-tech-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">Redis BullMQ</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Socket.io</span>
+              </div>
+              <div class="project-action-buttons">
+                <button class="btn btn-outline btn-sm view-spec-btn" data-modal="cloudpulse">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  Architecture Spec
+                </button>
+                <a href="https://github.com/bhavyarajsinh116" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: OmniCommerce High Concurrency -->
+          <article class="project-card" data-project="omnicommerce">
+            <div class="project-header">
+              <div class="project-meta-top">
+                <span class="project-badge">Full-Stack Core</span>
+                <span class="project-category">E-Commerce Architecture</span>
+              </div>
+              <h3 class="project-name">OmniCommerce — High-Throughput E-Commerce Platform</h3>
+              <p class="project-tagline">
+                Full-featured commerce engine featuring atomic inventory locking, Stripe webhook verification, indexed relational queries, and an admin analytics suite.
+              </p>
+            </div>
+
+            <div class="project-preview-box">
+              <div class="preview-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  <span class="mockup-url">https://omnicommerce.store/checkout/order-summary</span>
+                  <span class="mockup-status">Stripe Signed • PCI Compliant</span>
+                </div>
+                <div class="mockup-content">
+                  <div class="commerce-mockup-row">
+                    <div class="order-box">
+                      <div class="order-line"><span>Order ID: #ORD-8924</span><span class="text-emerald">Payment Verified</span></div>
+                      <div class="order-line text-muted"><span>Items (3 units)</span><span>$249.00</span></div>
+                      <div class="order-line text-muted"><span>Inventory Lock</span><span>Acquired (Tx #3094)</span></div>
+                    </div>
+                    <div class="badge-stack">
+                      <span class="tech-chip">ACID Compliant</span>
+                      <span class="tech-chip">Idempotent Webhooks</span>
+                      <span class="tech-chip">JWT Role Auth</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details-grid">
+              <div class="project-detail-col">
+                <span class="detail-label">The Technical Challenge</span>
+                <p class="detail-text">
+                  Preventing race conditions and inventory overselling during simultaneous checkout attempts, along with securely handling Stripe payment webhooks idempotently.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Architecture & Solution</span>
+                <p class="detail-text">
+                  Employed PostgreSQL pessimistic locking (`SELECT ... FOR UPDATE`) in database transactions, combined with an idempotent event table to guarantee zero duplicate charges or oversold stock.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Key Outcome & Metrics</span>
+                <p class="detail-text">
+                  Zero race-condition discrepancies across 500+ simulated concurrent checkout requests. Reduced average checkout response latency by 45%.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-tech-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Stripe API</span>
+                <span class="tag">Docker</span>
+                <span class="tag">JWT Auth</span>
+              </div>
+              <div class="project-action-buttons">
+                <button class="btn btn-outline btn-sm view-spec-btn" data-modal="omnicommerce">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  Architecture Spec
+                </button>
+                <a href="https://github.com/bhavyarajsinh116" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: DevConnect Real-Time Collaboration -->
+          <article class="project-card" data-project="devconnect">
+            <div class="project-header">
+              <div class="project-meta-top">
+                <span class="project-badge">Real-Time Web</span>
+                <span class="project-category">Collaborative Systems</span>
+              </div>
+              <h3 class="project-name">DevConnect — Live Multi-User Workspace & Code Sync</h3>
+              <p class="project-tagline">
+                Interactive engineering workspace featuring real-time code editor synchronization, live markdown previews, user presence tracking, and room-based channels.
+              </p>
+            </div>
+
+            <div class="project-preview-box">
+              <div class="preview-mockup">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                  <span class="mockup-url">https://devconnect-workspace.io/room/sprint-planning</span>
+                  <span class="mockup-status">Socket Connected (wss://)</span>
+                </div>
+                <div class="mockup-content">
+                  <div class="devconnect-mockup-row">
+                    <div class="collab-user-tag"><span class="user-avatar u1">B</span> Bhavyarajsinh (Editing line 42)</div>
+                    <div class="collab-user-tag"><span class="user-avatar u2">A</span> Alex (Viewing)</div>
+                    <div class="collab-user-tag"><span class="user-avatar u3">S</span> Sarah (Typing...)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-details-grid">
+              <div class="project-detail-col">
+                <span class="detail-label">The Technical Challenge</span>
+                <p class="detail-text">
+                  Synchronizing simultaneous character insertions and deletions across remote collaborators without text stuttering, conflicts, or socket message congestion.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Architecture & Solution</span>
+                <p class="detail-text">
+                  Built operational transform lightweight diffing protocols with Socket.io room broadcasting. MongoDB stores persistent workspaces with Redis handling active presence sets.
+                </p>
+              </div>
+
+              <div class="project-detail-col">
+                <span class="detail-label">Key Outcome & Metrics</span>
+                <p class="detail-text">
+                  Stable sub-40ms real-time typing sync with zero text collision across multiple simultaneous browser sessions.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <div class="project-tech-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Socket.io</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Express</span>
+                <span class="tag">WebRTC</span>
+              </div>
+              <div class="project-action-buttons">
+                <button class="btn btn-outline btn-sm view-spec-btn" data-modal="devconnect">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  Architecture Spec
+                </button>
+                <a href="https://github.com/bhavyarajsinh116" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM DESIGN & ARCHITECTURE SHOWCASE (TECH INTERVIEW SECRET WEAPON) -->
+    <section id="architecture" class="section architecture-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">SYSTEMS THINKING</span>
+          <h2 class="section-title">How I Architect Full-Stack Systems</h2>
+          <p class="section-desc">
+            Technical interviewers want to see that you design for scalability, fault-tolerance, and security before writing the first line of code.
+          </p>
+        </div>
+
+        <div class="system-diagram-container">
+          <div class="diagram-tier tier-client">
+            <div class="tier-badge">CLIENT LAYER</div>
+            <div class="tier-card">
+              <div class="tier-title">React SPA / Next.js</div>
+              <ul class="tier-features">
+                <li>• State Management (Zustand/Redux)</li>
+                <li>• Route-based Code Splitting</li>
+                <li>• Optimistic UI Updates & Error Boundaries</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <span class="arrow-label">HTTPS / WSS</span>
+          </div>
+
+          <div class="diagram-tier tier-gateway">
+            <div class="tier-badge">GATEWAY & SECURITY</div>
+            <div class="tier-card">
+              <div class="tier-title">Express API Gateway</div>
+              <ul class="tier-features">
+                <li>• Helmet.js Security Headers & CORS</li>
+                <li>• Rate Limiting (Redis token bucket)</li>
+                <li>• JWT Verification & Payload Validation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <span class="arrow-label">Service Layer</span>
+          </div>
+
+          <div class="diagram-tier tier-services">
+            <div class="tier-badge">LOGIC & CACHE</div>
+            <div class="tier-card">
+              <div class="tier-title">Microservices & Redis</div>
+              <ul class="tier-features">
+                <li>• Controller / Service / Repository pattern</li>
+                <li>• Redis In-Memory Read Caching</li>
+                <li>• BullMQ Asynchronous Task Workers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <span class="arrow-label">Connection Pool</span>
+          </div>
+
+          <div class="diagram-tier tier-database">
+            <div class="tier-badge">PERSISTENCE</div>
+            <div class="tier-card">
+              <div class="tier-title">PostgreSQL & MongoDB</div>
+              <ul class="tier-features">
+                <li>• Relational & Document Schemas</li>
+                <li>• ACID Transaction Boundaries</li>
+                <li>• Replica sets & Automated Backups</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="architecture-summary-box">
+          <div class="summary-item">
+            <span class="summary-check">✓</span>
+            <div><strong>Defensive Input Validation:</strong> Using Zod/Joi schemas before queries touch DB layers.</div>
+          </div>
+          <div class="summary-item">
+            <span class="summary-check">✓</span>
+            <div><strong>Zero Single Point of Failure (SPOF):</strong> Stateless servers allowing effortless horizontal auto-scaling.</div>
+          </div>
+          <div class="summary-item">
+            <span class="summary-check">✓</span>
+            <div><strong>Structured Logging:</strong> Centralized Morgan/Winston logging with correlation IDs for fast debugging.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION TIMELINE -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">TRACK RECORD</span>
+          <h2 class="section-title">Experience & Academic Journey</h2>
+          <p class="section-desc">
+            Demonstrating hands-on technical execution, continuous self-improvement, and engineering milestones.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024 — PRESENT</div>
+              <h3 class="timeline-role">Full-Stack Software Engineer</h3>
+              <h4 class="timeline-company">Independent Engineering & Web Applications</h4>
+              <p class="timeline-desc">
+                Architecting and deploying end-to-end full-stack software products. Designing modular backend APIs with Node.js and Express, implementing reactive single-page frontends in React, and configuring database schemas in PostgreSQL and MongoDB.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Redis</span>
+                <span class="tag">Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2023 — 2024</div>
+              <h3 class="timeline-role">Web Development & Systems Contributor</h3>
+              <h4 class="timeline-company">Open Source & Client Deliverables</h4>
+              <p class="timeline-desc">
+                Built responsive web applications, implemented REST API integrations, refactored legacy JavaScript codebases into modern ES6+ modular standards, and optimized page load speeds by 40% using image minification and code splitting.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">JavaScript (ES6+)</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Git & GitHub</span>
+                <span class="tag">CSS Grid/Flexbox</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 (Education) -->
+          <div class="timeline-item">
+            <div class="timeline-dot dot-edu"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">FOUNDATION & EDUCATION</div>
+              <h3 class="timeline-role">Bachelor of Technology / Computer Science & Engineering</h3>
+              <h4 class="timeline-company">Engineering University</h4>
+              <p class="timeline-desc">
+                Core coursework in Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems (DBMS), Operating Systems, and Computer Networks. Consistently engaged in competitive coding and architectural hackathons.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Data Structures & Algorithms</span>
+                <span class="tag">DBMS</span>
+                <span class="tag">Computer Networks</span>
+                <span class="tag">System Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERVIEW PREPARATION / WHY HIRE ME -->
+    <section class="section hire-me-section">
+      <div class="container">
+        <div class="hire-card">
+          <div class="hire-content">
+            <span class="section-tag">HIRING MANAGERS & RECRUITERS</span>
+            <h2 class="hire-title">Why Bhavyarajsinh is ready to contribute on Day 1</h2>
+            <div class="hire-points">
+              <div class="hire-point">
+                <div class="hp-icon">⚡</div>
+                <div>
+                  <strong>Rapid Ramp-Up Time:</strong> Deep familiarity with modern JavaScript/TypeScript tooling, Docker environments, and agile git flows means minimal onboarding overhead.
+                </div>
+              </div>
+              <div class="hire-point">
+                <div class="hp-icon">🎯</div>
+                <div>
+                  <strong>Product & Business Empathy:</strong> I don't just write code; I care about user retention, system uptime, page load conversion, and maintainable engineering culture.
+                </div>
+              </div>
+              <div class="hire-point">
+                <div class="hp-icon">🤝</div>
+                <div>
+                  <strong>Clear Communicator:</strong> Comfortable explaining complex technical trade-offs, writing clean PR descriptions, and working in distributed or cross-functional teams.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hire-action-box">
+            <h3 class="box-title">Ready for Technical Interview</h3>
+            <p class="box-subtitle">Looking for an enthusiastic engineer ready to solve tough problems?</p>
+            <a href="#contact" class="btn btn-primary btn-block">Schedule Technical Interview</a>
+            <button id="card-download-resume" class="btn btn-secondary btn-block">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Full Resume
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & DIRECT RECRUITER FORM -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">LET'S BUILD TOGETHER</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-desc">
+            Interested in discussing full-time opportunities, high-impact projects, or scheduling an introductory technical call? Send a direct message below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info">
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="info-body">
+                <span class="info-label">Direct Email</span>
+                <a href="mailto:bhavyarajsinh.dev@gmail.com" class="info-link">bhavyarajsinh.dev@gmail.com</a>
+              </div>
+              <button class="icon-btn copy-btn" data-copy="bhavyarajsinh.dev@gmail.com" title="Copy email">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="info-body">
+                <span class="info-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/bhavyarajsinh" target="_blank" rel="noopener noreferrer" class="info-link">linkedin.com/in/bhavyarajsinh</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div class="info-body">
+                <span class="info-label">GitHub Profile</span>
+                <a href="https://github.com/bhavyarajsinh116" target="_blank" rel="noopener noreferrer" class="info-link">github.com/bhavyarajsinh116</a>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="info-body">
+                <span class="info-label">Location</span>
+                <span class="info-link text-white">India • Open to Relocation & Remote</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-container">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Your Name / Company</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Sarah Jenkins (Tech Recruiter)" required />
+                  <span class="form-error" id="name-error">Please enter your name</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Work Email</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="sarah@company.com" required />
+                  <span class="form-error" id="email-error">Please enter a valid work email</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Opportunity Type</label>
+                <select id="contact-subject" name="subject" class="form-input form-select">
+                  <option value="Full-Time Engineering Role">Full-Time Software Engineer Role</option>
+                  <option value="Technical Interview Request">Schedule Technical Interview</option>
+                  <option value="High-Impact Contract / Project">Contract / Consulting Project</option>
+                  <option value="General Engineering Inquiry">General Technical Discussion</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea id="contact-message" name="message" rows="4" class="form-input" placeholder="Tell me about the role, technical stack, or project challenges..." required></textarea>
+                <span class="form-error" id="message-error">Please write a brief message</span>
+              </div>
+
+              <button type="submit" id="submit-form-btn" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+
+              <div id="form-toast" class="form-toast" role="alert">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Thank you! Your message has been logged. I'll respond within 24 hours.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">B.</span>
+        <p class="footer-copy">
+          Designed & Architected by <strong>Bhavyarajsinh</strong>. Built with semantic HTML, modern Vanilla CSS, and pure JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME PREVIEW MODAL -->
+  <div id="resume-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="resume-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 id="resume-modal-title" class="modal-title">Curriculum Vitae — Bhavyarajsinh</h3>
+          <p class="modal-subtitle">Full-Stack Software Engineer • Production Ready</p>
+        </div>
+        <div class="modal-actions">
+          <a href="#" id="download-resume-file" class="btn btn-primary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <button id="close-resume-modal" class="icon-btn" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body resume-document">
+        <!-- ATS-Friendly Resume Sheet -->
+        <div class="resume-sheet">
+          <header class="resume-sheet-header">
+            <h1 class="sheet-name">BHAVYARAJSINH</h1>
+            <p class="sheet-contact">
+              Full-Stack Software Engineer | bhavyarajsinh.dev@gmail.com | linkedin.com/in/bhavyarajsinh | github.com/bhavyarajsinh116
+            </p>
+          </header>
+
+          <section class="sheet-section">
+            <h2 class="sheet-section-title">PROFESSIONAL SUMMARY</h2>
+            <p class="sheet-text">
+              Results-driven Full-Stack Software Engineer with robust expertise in React, Node.js, Express, PostgreSQL, and MongoDB. Proven capability in architecting end-to-end distributed web systems, optimizing relational database queries for high concurrency, and delivering modern responsive user interfaces with sub-second response times.
+            </p>
+          </section>
+
+          <section class="sheet-section">
+            <h2 class="sheet-section-title">TECHNICAL SKILLS</h2>
+            <ul class="sheet-list">
+              <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3</li>
+              <li><strong>Frontend:</strong> React.js, Next.js, Redux Toolkit, Context API, CSS Grid, Responsive Design</li>
+              <li><strong>Backend:</strong> Node.js, Express.js, RESTful APIs, WebSockets (Socket.io), Microservices, JWT Auth</li>
+              <li><strong>Databases & Caching:</strong> PostgreSQL, MongoDB, Redis, Mongoose, SQL Query Optimization</li>
+              <li><strong>DevOps & Tools:</strong> Docker, Git, GitHub Actions CI/CD, Postman, Linux CLI, Vite</li>
+            </ul>
+          </section>
+
+          <section class="sheet-section">
+            <h2 class="sheet-section-title">FEATURED PROJECTS</h2>
+            <div class="sheet-project">
+              <div class="sheet-proj-header">
+                <strong>CloudPulse — Distributed API Telemetry Platform</strong>
+                <span>React, Node.js, Express, Redis, BullMQ</span>
+              </div>
+              <p class="sheet-text">• Engineered asynchronous health monitoring engine processing 500+ periodic endpoint queries.</p>
+              <p class="sheet-text">• Integrated Redis BullMQ queues, lowering server CPU spikes during cron executions by 60%.</p>
+              <p class="sheet-text">• Connected WebSockets to stream live heartbeat latency charts to React clients in under 50ms.</p>
+            </div>
+
+            <div class="sheet-project">
+              <div class="sheet-proj-header">
+                <strong>OmniCommerce — High-Concurrency E-Commerce System</strong>
+                <span>React, Express, PostgreSQL, Stripe</span>
+              </div>
+              <p class="sheet-text">• Built transactional order pipeline with PostgreSQL pessimistic locking to eliminate double-selling.</p>
+              <p class="sheet-text">• Designed idempotent webhook listener verifying Stripe digital signatures and automated receipts.</p>
+              <p class="sheet-text">• Indexed relational tables to reduce product catalog search and filter latency by 45%.</p>
+            </div>
+          </section>
+
+          <section class="sheet-section">
+            <h2 class="sheet-section-title">EDUCATION</h2>
+            <div class="sheet-proj-header">
+              <strong>Bachelor of Technology in Computer Science & Engineering</strong>
+              <span>First Class</span>
+            </div>
+            <p class="sheet-text">Relevant Coursework: Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARCHITECTURE SPEC MODAL -->
+  <div id="spec-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="spec-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 id="spec-modal-title" class="modal-title">Technical Deep-Dive</h3>
+          <p id="spec-modal-subtitle" class="modal-subtitle">Architecture & Implementation Blueprint</p>
+        </div>
+        <button id="close-spec-modal" class="icon-btn" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="spec-modal-content">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE (CMD+K / CTRL+K) -->
+  <div id="cmd-palette" class="modal-overlay cmd-overlay" aria-hidden="true" role="dialog">
+    <div class="cmd-box">
+      <div class="cmd-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="cmd-search-input" placeholder="Type a command or jump to section..." autocomplete="off" />
+        <span class="cmd-badge">ESC</span>
+      </div>
+
+      <div class="cmd-results" id="cmd-results-list">
+        <div class="cmd-group-title">Navigation</div>
+        <div class="cmd-item" data-action="navigate" data-target="#projects">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Jump to Featured Projects</span>
+          <span class="cmd-shortcut">P</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#skills">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Jump to Skills Matrix</span>
+          <span class="cmd-shortcut">S</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#architecture">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <span>Jump to System Design Architecture</span>
+          <span class="cmd-shortcut">A</span>
+        </div>
+        <div class="cmd-item" data-action="navigate" data-target="#contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>Jump to Contact & Hiring Form</span>
+          <span class="cmd-shortcut">C</span>
+        </div>
+
+        <div class="cmd-group-title">Quick Actions</div>
+        <div class="cmd-item" data-action="resume">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Open Full Resume Preview</span>
+          <span class="cmd-shortcut">R</span>
+        </div>
+        <div class="cmd-item" data-action="copy-email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copy Bhavyarajsinh's Email</span>
+          <span class="cmd-shortcut">E</span>
+        </div>
+        <div class="cmd-item" data-action="toggle-theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/></svg>
+          <span>Toggle Dark / Light Theme</span>
+          <span class="cmd-shortcut">T</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
