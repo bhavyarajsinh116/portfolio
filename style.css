@@ -525,14 +525,14 @@ p {
 
 /* --- HERO SECTION --- */
 .hero-section {
-  padding: 80px 0 100px 0;
+  padding: 40px 0 70px 0;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 50px;
-  align-items: center;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 40px;
+  align-items: flex-start;
 }
 
 /* Hero Profile Badge Intro */
@@ -682,6 +682,9 @@ p {
 .hero-interactive {
   position: relative;
   perspective: 1200px;
+  width: 100%;
+  max-width: 440px;
+  margin-left: auto;
 }
 
 /* View Switcher Tabs */
@@ -832,27 +835,27 @@ p {
   animation: pulse-ring 2s infinite ease-out;
 }
 
-/* Portrait Stage */
+/* Portrait Stage — Perfectly proportioned 3:4 aspect ratio showing full head & suit clothes */
 .profile-photo-stage {
   position: relative;
   width: 100%;
-  height: 380px;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #090a0f;
+  background: #0f131c;
 }
 
 .profile-main-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
   will-change: transform;
   display: block;
 }
 
 .interactive-profile-card:hover .profile-main-photo {
-  transform: scale(1.06);
+  transform: scale(1.04);
   filter: contrast(105%) brightness(103%);
 }
 
@@ -861,8 +864,8 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45%;
-  background: linear-gradient(to top, rgba(9, 10, 15, 0.88) 0%, rgba(9, 10, 15, 0) 100%);
+  height: 22%;
+  background: linear-gradient(to top, rgba(9, 10, 15, 0.45) 0%, transparent 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -2258,6 +2261,11 @@ p {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .hero-interactive {
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   .hero-title {
