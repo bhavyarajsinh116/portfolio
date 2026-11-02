@@ -83,6 +83,34 @@ function initProfileCard3D() {
   });
   card.addEventListener('mousemove', onMouseMove);
   card.addEventListener('mouseleave', onMouseLeave);
+
+  // Mobile Touch Tilt Support
+  card.addEventListener('touchstart', () => {
+    card.style.transition = 'none';
+    onMouseEnter();
+  }, { passive: true });
+
+  card.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      const touch = e.touches[0];
+      if (!bounds) bounds = card.getBoundingClientRect();
+      const touchX = touch.clientX - bounds.left;
+      const touchY = touch.clientY - bounds.top;
+      if (touchX >= 0 && touchX <= bounds.width && touchY >= 0 && touchY <= bounds.height) {
+        const xPct = touchX / bounds.width;
+        const yPct = touchY / bounds.height;
+        const tiltX = (0.5 - yPct) * 12;
+        const tiltY = (xPct - 0.5) * 12;
+        card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        if (glare) {
+          card.style.setProperty('--glare-x', `${(xPct * 100).toFixed(1)}%`);
+          card.style.setProperty('--glare-y', `${(yPct * 100).toFixed(1)}%`);
+        }
+      }
+    }
+  }, { passive: true });
+
+  card.addEventListener('touchend', onMouseLeave);
 }
 
 
@@ -431,6 +459,15 @@ function initResumeModal() {
   if (openBtn) openBtn.addEventListener('click', openModal);
   if (cardBtn) cardBtn.addEventListener('click', openModal);
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  const mobileOpenBtn = document.getElementById('mobile-open-resume-btn');
+  if (mobileOpenBtn) {
+    mobileOpenBtn.addEventListener('click', () => {
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks) navLinks.classList.remove('open');
+      openModal();
+    });
+  }
 
   if (resumeModal) {
     resumeModal.addEventListener('click', (e) => {
